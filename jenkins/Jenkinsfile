@@ -18,7 +18,7 @@ spec:
         stage('Build') {
             steps {
                 container('maven') {
-                    s h 'start file'
+                    sh 'start file'
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
