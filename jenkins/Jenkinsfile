@@ -13,13 +13,12 @@ spec:
     tty: true
 """
         }
-        
     }
     stages {
         stage('Build') {
             steps {
                 container('maven') {
-                    sh 'start file'
+                    s h 'start file'
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
