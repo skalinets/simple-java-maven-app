@@ -13,13 +13,12 @@ spec:
     tty: true
 """
         }
-        
     }
     stages {
         stage('Build') {
             steps {
                 container('maven') {
-                    sh 'start file'
+                    echo 'start file'
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
@@ -43,6 +42,7 @@ spec:
                 branch 'master'
             }
             steps {
+                input "do you want to proceed?"
                 container('maven') {
                     echo 'delivery succesful'
                     //sh './scripts/deliver.sh'
